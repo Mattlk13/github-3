@@ -15,6 +15,7 @@ module Github
       'downloads',
       'forks',
       'hooks',
+      'invitations',
       'keys',
       'merging',
       'pages',
@@ -32,6 +33,7 @@ module Github
       homepage
       private
       has_issues
+      has_projects
       has_wiki
       has_downloads
       team_id
@@ -65,6 +67,9 @@ module Github
 
     # Access to Repos::Hooks API
     namespace :hooks
+
+    # Access to Repos::Invitations API
+    namespace :invitations
 
     # Access to Repos::Keys API
     namespace :keys

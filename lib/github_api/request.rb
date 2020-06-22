@@ -43,8 +43,7 @@ module Github
 
     # Performs a request
     #
-    # @param [Symbol] method - The Symbol the HTTP verb
-    # @param [String] path   - String relative URL to access
+    # @param current_options [Hash]
     # @param [ParamsHash] params - ParamsHash to configure the request API
     #
     # @return [Github::ResponseWrapper]
@@ -52,7 +51,7 @@ module Github
     # @api private
     def call(current_options, params)
       unless HTTP_METHODS.include?(action)
-        raise ArgumentError, "unknown http method: #{method}"
+        raise ArgumentError, "unknown http method: #{action}"
       end
 
       puts "EXECUTED: #{action} - #{path} with PARAMS: #{params.request_params}" if ENV['DEBUG']
